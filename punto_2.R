@@ -1,3 +1,6 @@
+# Establezco el seed para poder repetir los resultados
+set.seed(1)
+
 # Defino las variables
 a<-0.05
 k<-5000
@@ -37,8 +40,8 @@ for (i in 1:k) {
   pivot_2_samples[i]<-c(T2(sample, lambda))
   
   # Calculo el intervalo de confianza para el pivote 1
-  interval_1[1]<-(1 / (-(qnorm(1-(0.05/2))*mean / sqrt(n)) + mean))
-  interval_1[2]<-(1 / ((qnorm(1-(0.05/2))*mean / sqrt(n)) + mean))
+  interval_1[1]<-(1 / ((qnorm(1-(0.05/2))*mean / sqrt(n)) + mean))
+  interval_1[2]<-(1 / (-(qnorm(1-(0.05/2))*mean / sqrt(n)) + mean))
   
   # Calculo el intervalo de confianza para el pivote 2
   # Debería guardarse para cada k
